@@ -17,6 +17,17 @@ class Game {
     this.score = 0;
     this.lives = 5;
     this.gameIsOver = false;
+    this.audioArray = [
+      new Audio("sounds/a4.wav"),
+      new Audio("sounds/a4.wav"),
+      new Audio("sounds/b4.wav"),
+      new Audio("sounds/c4.wav"),
+      new Audio("sounds/c5.wav"),
+      new Audio("sounds/d4.wav"),
+      new Audio("sounds/e4.wav"),
+      new Audio("sounds/f4.wav"),
+      new Audio("sounds/g4.wav"),
+    ];
   }
 
   start() {
@@ -43,7 +54,8 @@ class Game {
 
   update() {
     this.player.move();
-    // console.log("in the update");
+    console.log("in the update");
+    const j = Math.floor(Math.random() * this.audioArray.length);
     for (let i = 0; i < this.obstacles.length; i++) {
       const obstacle = this.obstacles[i];
 
@@ -51,6 +63,7 @@ class Game {
       if (this.player.didCollide(obstacle)) {
         obstacle.element.remove();
         this.obstacles.splice(i, 1);
+        this.audioArray[j].play();
         this.lives++;
         i++;
       } else if (obstacle.top > this.height) {

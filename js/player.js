@@ -27,19 +27,6 @@ class Player extends Component {
   }
 
   didCollide(obstacle) {
-    const audioArray = [
-      new Audio("sounds/a4.wav"),
-      new Audio("sounds/a4.wav"),
-      new Audio("sounds/b4.wav"),
-      new Audio("sounds/c4.wav"),
-      new Audio("sounds/c5.wav"),
-      new Audio("sounds/d4.wav"),
-      new Audio("sounds/e4.wav"),
-      new Audio("sounds/f4.wav"),
-      new Audio("sounds/g4.wav"),
-    ];
-    const i = Math.floor(Math.random() * audioArray.length);
-
     const playerRect = this.element.getBoundingClientRect();
     const obstacleRect = obstacle.element.getBoundingClientRect();
 
@@ -50,7 +37,7 @@ class Player extends Component {
       playerRect.bottom > obstacleRect.top
     ) {
       console.log("Crash!");
-      audioArray[i].play();
+
       return true;
     } else {
       return false;
