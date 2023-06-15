@@ -16,6 +16,7 @@ body {
   width: 100vw;
   padding: 20px 0px;
   justify-content: center;
+  color: white;
 }
 
 #game-screen {
@@ -47,6 +48,10 @@ body {
 #arrows {
   font-size: 25px;
   font-family: "Verdana";
+  color: #fff;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.4),
+    0 0 80px rgba(0, 0, 0, 0.3), 0 0 160px rgba(0, 0, 0, 0.2),
+    0 0 320px rgba(0, 0, 0, 0.1);
 }
 
 body button {
