@@ -23,5 +23,3 @@ class Component {
     this.element.style.top = `${this.top}px`;
   }
 }
-//const arr = ["asda","asdasd","asda"]
-//
