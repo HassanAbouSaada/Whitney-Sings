@@ -12,7 +12,7 @@ window.onload = function () {
     console.log("start game");
     game = new Game();
     game.start();
-    audio.play();
+    // audio.play();
   }
   function handleKeydown(event) {
     const key = event.key;
