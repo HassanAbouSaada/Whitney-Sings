@@ -4,6 +4,7 @@ class Game {
     this.gameScreen = document.getElementById("game-screen");
     this.gameEndScreen = document.getElementById("game-end");
     this.gameStatsScreen = document.getElementById("game-container");
+    this.status = document.getElementById("status");
     this.player = this.player = new Player(
       this.gameScreen,
       200,
@@ -30,10 +31,7 @@ class Game {
       new Audio("sounds/f4.wav"),
       new Audio("sounds/g4.wav"),
     ];
-    this.audioArray1 = [
-      new Audio("sounds/no.mp3"),
-      new Audio("sounds/wanna run.mp3"),
-    ];
+    this.audioArray1 = [new Audio("sounds/no.mp3")];
     this.audio2 = new Audio("sounds/always love you.mp3");
   }
 
@@ -43,6 +41,7 @@ class Game {
 
     this.startScreen.style.display = "none";
     this.gameScreen.style.display = "block";
+    this.status.style.display = "flex";
 
     this.gameLoop();
   }
@@ -51,7 +50,7 @@ class Game {
     console.log("in the game loop");
 
     if (this.gameIsOver) {
-      this.audio2.play();
+      //this.audio2.play();
       return;
     }
 
@@ -62,7 +61,7 @@ class Game {
 
   update() {
     this.player.move();
-    console.log("in the update");
+    console.log("this is score", this.score);
     const j = Math.floor(Math.random() * this.audioArray.length);
     const y = Math.floor(Math.random() * this.audioArray1.length);
     for (let i = 0; i < this.obstacles.length; i++) {
@@ -139,6 +138,9 @@ class Game {
   endGame() {
     this.player.element.remove();
     this.obstacles.forEach((obstacle) => obstacle.element.remove());
+
+    const scoreElement2 = document.getElementById("score2");
+    scoreElement2.textContent = this.score;
 
     this.gameIsOver = true;
 

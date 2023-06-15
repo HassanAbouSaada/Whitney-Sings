@@ -22,7 +22,6 @@ body {
 #game-screen {
   display: flex;
   align-content: center;
-  padding: 20px 0px;
   overflow: auto;
   position: relative;
   background-image: url(images/stage.png);
@@ -63,4 +62,29 @@ body button {
   box-shadow: 0;
   border-radius: 5px;
   margin-bottom: 20px;
+}
+
+#status {
+  display: none;
+  text-align: left;
+  padding-left: 20px;
+}
+
+#live {
+  margin-left: 10px;
+}
+
+#rest-in-peace {
+  color: white;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.4),
+    0 0 80px rgba(0, 0, 0, 0.3), 0 0 160px rgba(0, 0, 0, 0.2),
+    0 0 320px rgba(0, 0, 0, 0.1);
+}
+
+#score-end {
+  font-size: 25px;
+  color: white;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.4),
+    0 0 80px rgba(0, 0, 0, 0.3), 0 0 160px rgba(0, 0, 0, 0.2),
+    0 0 320px rgba(0, 0, 0, 0.1);
 }

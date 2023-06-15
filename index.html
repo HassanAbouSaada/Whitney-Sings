@@ -20,22 +20,22 @@
       </div>
 
       <div id="game-container">
-        <div>
-          <h2>Stats</h2>
-          <p>Score: <span id="score">0</span></p>
-          <p>Lives: <span id="lives">5</span></p>
-        </div>
-
         <!-- second screen -->
-        <div id="game-screen"></div>
+        <div id="game-screen">
+          <div id="status">
+            <p>Score: <span id="score">0</span></p>
+            <p id="live">Lives: <span id="lives">5</span></p>
+          </div>
+        </div>
       </div>
 
       <!-- third screen -->
       <div id="game-end">
         <img src="./images/logo.png" alt="" class="logo-img" />
-        <h1>Game Over</h1>
+        <p id="score-end">Score: <span id="score2">0</span></p>
+        <h1 id="rest-in-peace">🪦 Rest in Peace 🪦</h1>
         <br />
-        <button id="restart-button">Sing Again</button>
+        <button id="restart-button">Sing Again 🎤</button>
       </div>
     </main>
 
