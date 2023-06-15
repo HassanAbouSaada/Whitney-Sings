@@ -1,5 +1,5 @@
 window.onload = function () {
-  const audio = new Audio("sounds/e4.wav");
+  const audio = new Audio("sounds/dance with somebody.mp3");
   const startButton = document.getElementById("start-button");
   const restartButton = document.getElementById("restart-button");
   let game;
@@ -12,7 +12,7 @@ window.onload = function () {
     console.log("start game");
     game = new Game();
     game.start();
-    // audio.play();
+    audio.play();
   }
   function handleKeydown(event) {
     const key = event.key;
@@ -28,16 +28,16 @@ window.onload = function () {
 
       switch (key) {
         case "ArrowLeft":
-          game.player.directionX = -1;
+          game.player.directionX = -2;
           break;
         case "ArrowUp":
-          game.player.directionY = -1;
+          game.player.directionY = -2;
           break;
         case "ArrowRight":
-          game.player.directionX = 1;
+          game.player.directionX = 2;
           break;
         case "ArrowDown":
-          game.player.directionY = 1;
+          game.player.directionY = 2;
           break;
       }
     }
