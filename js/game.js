@@ -118,7 +118,7 @@ class Game {
     /* checks the number of good and bad obstacles inside the screen to replace them according
      to the defined number */
     if (
-      Math.random() > 0.98 &&
+      Math.random() > 0.95 &&
       this.obstacles.length < 10 &&
       this.obstacles1.length < 4
     ) {
