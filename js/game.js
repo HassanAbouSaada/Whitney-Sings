@@ -23,17 +23,17 @@ class Game {
     this.score = 0;
     this.lives = 5;
     this.gameIsOver = false;
-    this.audioArray = [
-      new Audio("sounds/a4.wav"),
-      new Audio("sounds/a4.wav"),
-      new Audio("sounds/b4.wav"),
-      new Audio("sounds/c4.wav"),
-      new Audio("sounds/c5.wav"),
-      new Audio("sounds/d4.wav"),
-      new Audio("sounds/e4.wav"),
-      new Audio("sounds/f4.wav"),
-      new Audio("sounds/g4.wav"),
-    ];
+
+    this.audioMap = {
+      0: new Audio("sounds/a4.wav"),
+      1: new Audio("sounds/b4.wav"),
+      2: new Audio("sounds/c4.wav"),
+      3: new Audio("sounds/c5.wav"),
+      4: new Audio("sounds/d4.wav"),
+      5: new Audio("sounds/e4.wav"),
+      6: new Audio("sounds/f4.wav"),
+      7: new Audio("sounds/g4.wav"),
+    };
     this.audioArray1 = [new Audio("sounds/no.mp3")];
     this.audio2 = new Audio("sounds/always love you.mp3");
   }
@@ -73,7 +73,8 @@ class Game {
   update() {
     this.player.move();
     console.log("this is score", this.score);
-    const j = Math.floor(Math.random() * this.audioArray.length);
+    //const j = Math.floor(Math.random() * this.audioArray.length);
+
     const y = Math.floor(Math.random() * this.audioArray1.length);
     for (let i = 0; i < this.obstacles.length; i++) {
       const obstacle = this.obstacles[i];
@@ -82,7 +83,8 @@ class Game {
       if (this.player.didCollide(obstacle)) {
         obstacle.element.remove();
         this.obstacles.splice(i, 1);
-        this.audioArray[j].play();
+        const audioA = this.audioMap[obstacle.audioId];
+        audioA.play();
         this.score++;
         i++;
         const scoreElement = document.getElementById("score");
@@ -118,7 +120,7 @@ class Game {
     /* checks the number of good and bad obstacles inside the screen to replace them according
      to the defined number */
     if (
-      Math.random() > 0.98 &&
+      Math.random() > 0.95 &&
       this.obstacles.length < 10 &&
       this.obstacles1.length < 4
     ) {
