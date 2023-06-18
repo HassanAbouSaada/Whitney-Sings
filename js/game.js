@@ -21,7 +21,7 @@ class Game {
     this.obstacles1 = []; // bad obstacles
     this.obstacles = []; // good obstacles
     this.score = 0;
-    this.lives = 5;
+    this.lives = 7;
     this.gameIsOver = false;
 
     this.audioMap = {
